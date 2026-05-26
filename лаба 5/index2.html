@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Резиновая вёрстка | Печко А.А.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0b0719;  /* глубокий тёмно-фиолетовый фон */
+            padding: 20px;
+        }
+        .fluid {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #120c24;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(177, 70, 244, 0.25);
+            border: 1px solid #b546ff;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e1338 0%, #2a1a4a 100%);
+            color: #d29bff;
+            text-align: center;
+            padding: 24px 18px;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #b546ff;
+            text-shadow: 0 0 4px #b84cff;
+        }
+        .student-name {
+            font-size: 13px;
+            color: #b0a0d0;
+            margin-top: 8px;
+            font-weight: normal;
+            letter-spacing: 0.5px;
+        }
+        .nav {
+            background: #0f0a1f;
+            text-align: center;
+            padding: 14px 12px;
+            border-bottom: 1px solid #3a2a5a;
+        }
+        .nav a {
+            color: #cea7ff;
+            margin: 0 18px;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 6px 14px;
+            border-radius: 30px;
+            transition: all 0.25s ease;
+            font-weight: 500;
+        }
+        .nav a:hover {
+            background: #b546ff;
+            color: #0b0719;
+            box-shadow: 0 0 8px #c55eff;
+        }
+        .row {
+            display: flex;
+            gap: 12px;
+            padding: 12px;
+        }
+        .block-1, .block-2, .block-3 {
+            width: 30%;
+            background: #181030;
+            text-align: center;
+            padding: 52px 0;
+            border-radius: 18px;
+            border: 1px solid #6d49b0;
+            font-weight: bold;
+            color: #d5b3ff;
+            transition: all 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+            backdrop-filter: blur(2px);
+        }
+        .block-4 {
+            width: 40%;
+            background: #181030;
+            text-align: center;
+            padding: 52px 0;
+            border-radius: 18px;
+            border: 1px solid #6d49b0;
+            font-weight: bold;
+            color: #d5b3ff;
+            transition: all 0.2s;
+        }
+        .block-5, .block-6 {
+            flex: 1;
+            background: #1f1540;
+            text-align: center;
+            padding: 52px 0;
+            border-radius: 18px;
+            border: 1px solid #7a54c4;
+            font-weight: bold;
+            color: #e0c8ff;
+            transition: all 0.2s;
+        }
+        .block-1:hover, .block-2:hover, .block-3:hover,
+        .block-4:hover, .block-5:hover, .block-6:hover {
+            background: #2b1b55;
+            border-color: #dd99ff;
+            color: #f0e6ff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(181, 70, 255, 0.3);
+        }
+        .footer {
+            background: #0e0922;
+            color: #a088cc;
+            text-align: center;
+            padding: 20px 16px;
+            font-size: 13px;
+            border-top: 2px solid #b546ff;
+        }
+        .footer p {
+            margin-bottom: 10px;
+        }
+        .social a {
+            color: #c792ff;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .social a:hover {
+            color: #ff9f4a;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .group-info {
+            background: #0b071c;
+            text-align: center;
+            padding: 12px;
+            font-size: 12px;
+            color: #6d5a95;
+            border-top: 1px solid #342a55;
+            font-family: monospace;
+            letter-spacing: 0.3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fluid">
+        <div class="header">
+            ✦ NEBULA STYLE ✦
+            <div class="student-name">Печко Алексей Александрович | ПЗТ-43</div>
+        </div>
+        <div class="nav">
+            <a href="#">Главная</a>
+            <a href="#">О нас</a>
+            <a href="#">Услуги</a>
+            <a href="#">Портфолио</a>
+            <a href="#">Блог</a>
+            <a href="#">Контакты</a>
+        </div>
+        <div class="row">
+            <div class="block-1">💜 1 (30%)</div>
+            <div class="block-4">🔮 4 (40%)</div>
+            <div class="block-5">✨ 5 (оставшаяся часть)</div>
+        </div>
+        <div class="row">
+            <div class="block-2">💙 2 (30%)</div>
+            <div class="block-5">⚡ 5 (оставшаяся часть)</div>
+            <div class="block-6">🌟 6 (оставшаяся часть)</div>
+        </div>
+        <div class="row">
+            <div class="block-3">💚 3 (30%)</div>
+            <div class="block-5">🌀 5 (оставшаяся часть)</div>
+            <div class="block-6">🌈 6 (оставшаяся часть)</div>
+        </div>
+        <div class="footer">
+            <p>© 2026 Резиновая вёрстка | Печко Алексей Александрович</p>
+            <div class="social">
+                <a href="#">VK</a> | <a href="#">Instagram</a> | <a href="#">Telegram</a>
+            </div>
+        </div>
+        <div class="group-info">
+            Выполнил: Печко Алексей Александрович (ПЗТ-43) | Резиновая вёрстка на Flexbox | неоновая тема
+        </div>
+    </div>
+</body>
+</html>
