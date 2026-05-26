@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ЛР7 + ЛР8 — Адаптивная вёрстка и Интернет-магазин | Печко А.А.">
+    <title>ЛР7+ЛР8 — @media + Интернет-магазин | Печко А.А.</title>
+    <link rel="stylesheet" href="laba7.css">
+</head>
+<body>
+
+    <!-- ===================== БУРГЕР-МЕНЮ ===================== -->
+    <input type="checkbox" id="burger-toggle" class="burger-checkbox">
+    <label for="burger-toggle" class="burger-icon" aria-label="Меню">
+        <span></span><span></span><span></span>
+    </label>
+    <div class="mobile-overlay"></div>
+    <nav class="mobile-nav" aria-label="Мобильная навигация">
+        <a href="#">Главная</a>
+        <a href="#">О нас</a>
+        <a href="#">Услуги</a>
+        <a href="#">Портфолио</a>
+        <a href="#">Блог</a>
+        <a href="#">Контакты</a>
+    </nav>
+
+    <!-- ===================== ДЕСКТОП-НАВ ===================== -->
+    <nav class="desktop-nav" aria-label="Основная навигация">
+        <span class="nav-logo">✦ GRID CSS</span>
+        <div class="nav-links">
+            <a href="#">Главная</a>
+            <a href="#">О нас</a>
+            <a href="#">Услуги</a>
+            <a href="#">Портфолио</a>
+            <a href="#">Блог</a>
+            <a href="#">Контакты</a>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO-СЕКЦИЯ ===================== -->
+    <section class="hero" aria-label="Заголовок лабораторной работы">
+        <div class="hero-inner">
+            <div class="hero-badge">Лабораторная работа №7 + №8</div>
+            <h1 class="hero-title">@media<br><span>Адаптивная<br>вёрстка</span></h1>
+            <p class="hero-sub">Desktop · Планшет · Mobile<br>Печко Алексей Александрович · ПЗТ-43</p>
+            <div class="hero-breakpoints">
+                <div class="bp-chip bp-desktop">≥ 1200px<br><small>Desktop</small></div>
+                <div class="bp-chip bp-laptop">≥ 1024px<br><small>Laptop</small></div>
+                <div class="bp-chip bp-tablet">≥ 768px<br><small>Tablet</small></div>
+                <div class="bp-chip bp-mobile">≥ 480px<br><small>Mobile L</small></div>
+                <div class="bp-chip bp-small">< 480px<br><small>Mobile S</small></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== МАСТЕР-ГРИД (из ЛР6) ===================== -->
+    <section class="section-wrap">
+        <h2 class="section-label">
+            <span class="label-num">01</span>
+            Основная модульная сетка — из ЛР6
+        </h2>
+
+        <div class="master-grid">
+
+            <header class="grid-header">
+                <span class="logo-text">✦ CSS GRID ✦</span>
+                <div class="student-name">Печко Алексей Александрович · ПЗТ-43 · ЛР6 + ЛР7</div>
+            </header>
+
+            <aside class="grid-sidebar">
+                <img class="profile-photo" src="mustang.jpg" alt="Аватар">
+                <div class="profile-name">Алексей Печко</div>
+                <div class="profile-bio">Веб-разработчик. CSS Grid и адаптивные интерфейсы.</div>
+                <ul class="prop-list">
+                    <li><code>@media (max-width: 1200px)</code></li>
+                    <li><code>@media (max-width: 1024px)</code></li>
+                    <li><code>@media (max-width: 768px)</code></li>
+                    <li><code>@media (max-width: 480px)</code></li>
+                    <li><code>@media (max-width: 360px)</code></li>
+                    <li><code>min-width / max-width</code></li>
+                    <li><code>orientation: portrait/landscape</code></li>
+                    <li><code>clamp() / fluid type</code></li>
+                </ul>
+            </aside>
+
+            <main class="grid-content">
+                <h3>🌟 Галерея / Портфолио</h3>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <img class="news-img" src="lot.jpg" alt="Горное озеро">
+                        <div class="news-text">
+                            <h4>Горное озеро</h4>
+                            <p>Адаптивная сетка, анимации, тёмная тема.</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img class="news-img" src="mustang.jpg" alt="Гора Фудзи">
+                        <div class="news-text">
+                            <h4>Гора Фудзи</h4>
+                            <p>Grid-каталог, фильтры, корзина.</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img class="news-img" src="dvs.jpg" alt="Живописный пейзаж">
+                        <div class="news-text">
+                            <h4>Живописный пейзаж</h4>
+                            <p>Сложная компоновка Grid-виджетов.</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h3>📐 Выравнивание</h3>
+                <div class="property-table">
+                    <div class="property-item">align-content: center</div>
+                    <div class="property-item">justify-content: center</div>
+                    <div class="property-item">place-content: center</div>
+                    <div class="property-item">align-items: stretch</div>
+                    <div class="property-item">justify-items: stretch</div>
+                    <div class="property-item">place-items: stretch</div>
+                </div>
+            </main>
+
+            <aside class="grid-extra">
+                <h3>🎨 Коллаж</h3>
+                <div class="collage">
+                    <img class="collage-img" src="mustang.jpg" alt="Пейзаж 1">
+                    <img class="collage-img" src="lot.jpg"     alt="Пейзаж 2">
+                    <img class="collage-img" src="dvs.jpg"     alt="Пейзаж 3">
+                    <img class="collage-img" src="mustang.jpg" alt="Пейзаж 4">
+                </div>
+                <p class="hint"><code>grid-auto-rows: minmax(70px, auto)</code></p>
+            </aside>
+
+            <footer class="grid-footer">
+                <p>© 2026 Адаптивная вёрстка · Печко Алексей Александрович</p>
+                <div class="social">
+                    <a href="#">VK</a> · <a href="#">Instagram</a> · <a href="#">Telegram</a>
+                </div>
+            </footer>
+
+        </div>
+    </section>
+
+
+    <!-- ===================== ДЕМО @MEDIA ===================== -->
+    <section class="section-wrap">
+        <h2 class="section-label">
+            <span class="label-num">02</span>
+            Демонстрация @media-правил
+        </h2>
+
+        <div class="breakpoint-indicator" aria-live="polite">
+            <div class="bp-bar" role="presentation">
+                <div class="bp-seg bp-seg-desktop">Desktop ≥1200</div>
+                <div class="bp-seg bp-seg-laptop">Laptop ≥1024</div>
+                <div class="bp-seg bp-seg-tablet">Tablet ≥768</div>
+                <div class="bp-seg bp-seg-mobileL">Mobile-L ≥480</div>
+                <div class="bp-seg bp-seg-mobileS">Mobile-S &lt;480</div>
+            </div>
+            <div class="bp-active-label">Вы сейчас:
+                <span class="bp-name-desktop">Desktop</span>
+                <span class="bp-name-laptop">Laptop</span>
+                <span class="bp-name-tablet">Tablet</span>
+                <span class="bp-name-mobileL">Mobile-L</span>
+                <span class="bp-name-mobileS">Mobile-S</span>
+            </div>
+        </div>
+
+        <div class="media-rules-grid">
+            <div class="rule-card rule-desktop">
+                <div class="rule-icon">🖥️</div>
+                <div class="rule-code">@media (min-width: 1200px)</div>
+                <div class="rule-title">Desktop</div>
+                <ul class="rule-list">
+                    <li>3-колоночная сетка</li>
+                    <li>Полная навигация</li>
+                    <li>font-size: 16px</li>
+                    <li>padding: 20px</li>
+                    <li>max-width: 1400px</li>
+                </ul>
+            </div>
+            <div class="rule-card rule-laptop">
+                <div class="rule-icon">💻</div>
+                <div class="rule-code">@media (max-width: 1199px)</div>
+                <div class="rule-title">Laptop / Large Tablet</div>
+                <ul class="rule-list">
+                    <li>3 колонки, ýже</li>
+                    <li>font-size: 15px</li>
+                    <li>Сжатые отступы</li>
+                    <li>gap: 16px</li>
+                    <li>Навигация видна</li>
+                </ul>
+            </div>
+            <div class="rule-card rule-tablet">
+                <div class="rule-icon">📱</div>
+                <div class="rule-code">@media (max-width: 1023px)</div>
+                <div class="rule-title">Tablet Portrait</div>
+                <ul class="rule-list">
+                    <li>2-колоночная сетка</li>
+                    <li>Sidebar → горизонталь</li>
+                    <li>font-size: 14px</li>
+                    <li>Extra блок — full</li>
+                    <li>Навигация скрыта</li>
+                </ul>
+            </div>
+            <div class="rule-card rule-mobile">
+                <div class="rule-icon">📲</div>
+                <div class="rule-code">@media (max-width: 767px)</div>
+                <div class="rule-title">Mobile Large</div>
+                <ul class="rule-list">
+                    <li>1 колонка</li>
+                    <li>Бургер-меню</li>
+                    <li>font-size: 14px</li>
+                    <li>Карточки во всю ширину</li>
+                    <li>Стек элементов</li>
+                </ul>
+            </div>
+            <div class="rule-card rule-small">
+                <div class="rule-icon">⌚</div>
+                <div class="rule-code">@media (max-width: 479px)</div>
+                <div class="rule-title">Mobile Small</div>
+                <ul class="rule-list">
+                    <li>padding: 10px</li>
+                    <li>font-size: 13px</li>
+                    <li>1 колонка везде</li>
+                    <li>Мелкая типографика</li>
+                    <li>Компактные кнопки</li>
+                </ul>
+            </div>
+            <div class="rule-card rule-orient">
+                <div class="rule-icon">🔄</div>
+                <div class="rule-code">@media (orientation: landscape)</div>
+                <div class="rule-title">Landscape</div>
+                <ul class="rule-list">
+                    <li>Hero: уменьшен</li>
+                    <li>max-height на nav</li>
+                    <li>Боковой скролл убран</li>
+                    <li>Горизонтальный layout</li>
+                    <li>vh учтены</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===================== FLUID TYPOGRAPHY ===================== -->
+    <section class="section-wrap">
+        <h2 class="section-label">
+            <span class="label-num">03</span>
+            Fluid Typography — clamp()
+        </h2>
+        <div class="fluid-demo">
+            <div class="fluid-item">
+                <div class="fluid-text ft-h1">Заголовок H1</div>
+                <code>font-size: clamp(1.6rem, 4vw, 3rem)</code>
+            </div>
+            <div class="fluid-item">
+                <div class="fluid-text ft-h2">Заголовок H2</div>
+                <code>font-size: clamp(1.2rem, 3vw, 2rem)</code>
+            </div>
+            <div class="fluid-item">
+                <div class="fluid-text ft-h3">Заголовок H3</div>
+                <code>font-size: clamp(1rem, 2vw, 1.5rem)</code>
+            </div>
+            <div class="fluid-item">
+                <div class="fluid-text ft-body">Основной текст</div>
+                <code>font-size: clamp(0.85rem, 1.5vw, 1rem)</code>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===================== SHORTHAND GRID ===================== -->
+    <section class="section-wrap">
+        <h2 class="section-label">
+            <span class="label-num">04</span>
+            Shorthand: <code>grid: auto-flow / repeat(3, 1fr)</code>
+        </h2>
+        <div class="compact-shorthand">
+            <div class="compact-short-item"><img src="dvs.jpg" alt="Пейзаж 1"><span>Пейзаж 1</span></div>
+            <div class="compact-short-item"><img src="lot.jpg" alt="Пейзаж 2"><span>Пейзаж 2</span></div>
+            <div class="compact-short-item"><img src="mustang.jpg" alt="Пейзаж 3"><span>Пейзаж 3</span></div>
+            <div class="compact-short-item"><img src="dvs.jpg" alt="Пейзаж 4"><span>Пейзаж 4</span></div>
+            <div class="compact-short-item"><img src="lot.jpg" alt="Пейзаж 5"><span>Пейзаж 5</span></div>
+            <div class="compact-short-item"><img src="mustang.jpg" alt="Пейзаж 6"><span>Пейзаж 6</span></div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================================
+         СЕКЦИЯ 05 — ЛР8: ИНТЕРНЕТ-МАГАЗИН
+         Содержит:
+           • CTA-кнопку вызова модального окна
+           • Карточку товара с семантической Schema.org-разметкой
+         Модальное окно (lr8-overlay) живёт в конце body и открывается
+         через JS без зависимостей (нативный EventListener).
+    ===================================================================== -->
+    <section class="section-wrap" aria-label="ЛР8 — Интернет-магазин">
+        <h2 class="section-label">
+            <span class="label-num">05</span>
+            ЛР8 — Интернет-магазин: форма обратного звонка и карточка товара
+        </h2>
+
+        <div class="lr8-section-inner">
+
+            <!-- Кнопка открытия модалки + подсказка -->
+            <div class="lr8-cta-row">
+                <button class="lr8-open-btn" id="lr8-open-btn" type="button"
+                        aria-haspopup="dialog" aria-controls="lr8-overlay">
+                    ☎ Заказать обратный звонок
+                </button>
+                <span class="lr8-cta-hint">Нажмите, чтобы открыть форму</span>
+            </div>
+
+            <!-- ── КАРТОЧКА ТОВАРА ── -->
+            <article class="lr8-product"
+                     itemscope itemtype="https://schema.org/Product">
+
+                <!-- Название товара (h3 — третий уровень внутри секции) -->
+                <h3 class="lr8-product__title" itemprop="name">
+                    Женские кроссовки кожаные Ecco No:908057
+                </h3>
+
+                <!-- Артикул -->
+                <p class="lr8-product__sku">
+                    <span class="lr8-product__sku-label">Код товара:</span>
+                    <span itemprop="sku">No:908057</span>
+                </p>
+
+                <!-- Тело карточки: фото + детали -->
+                <div class="lr8-product__body">
+
+                    <!-- Галерея -->
+                    <figure class="lr8-product__gallery">
+                        <!--
+                            Гибкое изображение: max-width:100% в CSS.
+                            onerror — заглушка при отсутствии файла.
+                        -->
+                        <img
+                            class="lr8-product__img"
+                            src="1.jpg"
+                            alt="Женские кроссовки кожаные Ecco No:908057, белый цвет, вид сбоку"
+                            width="220"
+                            height="240"
+                            itemprop="image"
+                            onerror="this.style.minHeight='160px';this.alt='Изображение недоступно'"
+                        />
+                        <figcaption class="visually-hidden">
+                            Женские кроссовки кожаные Ecco, модель No:908057
+                        </figcaption>
+                    </figure>
+
+                    <!-- Детали товара -->
+                    <section class="lr8-product__details"
+                             aria-label="Информация о товаре">
+
+                        <!-- Цена / наличие -->
+                        <div class="lr8-price"
+                             itemprop="offers"
+                             itemscope
+                             itemtype="https://schema.org/Offer">
+                            <p class="lr8-price__label">Цена</p>
+                            <p class="lr8-price__value">
+                                <span itemprop="price" content="2300">2&nbsp;300</span>
+                                <span class="lr8-price__currency"
+                                      itemprop="priceCurrency"
+                                      content="UAH">&#8372;</span>
+                            </p>
+                            <p class="lr8-price__stock"
+                               itemprop="availability"
+                               content="https://schema.org/InStock">
+                                в наличии
+                            </p>
+                        </div>
+
+                        <!-- Закладки / сравнение -->
+                        <div class="lr8-prod-actions"
+                             role="group"
+                             aria-label="Дополнительные действия">
+                            <button class="lr8-prod-actions__btn"
+                                    type="button"
+                                    aria-label="Добавить в закладки">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24" width="13" height="13"
+                                     aria-hidden="true" focusable="false">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                                             2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                                             C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5
+                                             c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                                В закладки
+                            </button>
+                            <button class="lr8-prod-actions__btn"
+                                    type="button"
+                                    aria-label="Добавить к сравнению">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24" width="13" height="13"
+                                     aria-hidden="true" focusable="false">
+                                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5
+                                             c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0
+                                             c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5
+                                             C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2
+                                             c-2.33 0-7 1.17-7 3.5V19h14v-2.5
+                                             c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05
+                                             1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5
+                                             c0-2.33-4.67-3.5-7-3.5z"/>
+                                </svg>
+                                В сравнение
+                            </button>
+                        </div>
+
+                        <!-- Количество + Купить -->
+                        <div class="lr8-buy"
+                             role="group"
+                             aria-label="Добавить в корзину">
+
+                            <!-- Счётчик количества -->
+                            <div class="lr8-qty"
+                                 role="group"
+                                 aria-label="Количество товара">
+                                <button class="lr8-qty__btn"
+                                        type="button"
+                                        id="lr8-qty-minus"
+                                        aria-label="Уменьшить количество">&#8722;</button>
+                                <input  class="lr8-qty__input"
+                                        type="number"
+                                        id="lr8-qty-input"
+                                        value="1" min="1" max="999"
+                                        aria-label="Количество" />
+                                <button class="lr8-qty__btn"
+                                        type="button"
+                                        id="lr8-qty-plus"
+                                        aria-label="Увеличить количество">&#43;</button>
+                            </div>
+
+                            <!-- Кнопка «Купить» -->
+                            <button class="lr8-btn lr8-btn--primary lr8-btn--buy"
+                                    type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24" width="15" height="15"
+                                     aria-hidden="true" focusable="false"
+                                     class="lr8-btn__icon">
+                                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22
+                                             s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45
+                                             c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2
+                                             H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19
+                                             c.75 0 1.41-.41 1.75-1.03l3.58-6.49
+                                             c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21
+                                             l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2
+                                             s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                                </svg>
+                                Купить
+                            </button>
+                        </div>
+
+                        <!-- Быстрый заказ -->
+                        <div class="lr8-quick"
+                             role="group"
+                             aria-label="Быстрый заказ по телефону">
+                            <input  class="lr8-quick__input"
+                                    type="tel"
+                                    name="quick-phone"
+                                    placeholder="Ваш телефон"
+                                    aria-label="Телефон для быстрого заказа"
+                                    maxlength="20" />
+                            <button class="lr8-btn--quick" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24" width="13" height="13"
+                                     aria-hidden="true" focusable="false">
+                                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22
+                                             s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45
+                                             C5.4 12.83 5 13.41 5 14v1c0 .55.45 1 1 1h13v-2
+                                             H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19
+                                             c.75 0 1.41-.41 1.75-1.03l3.58-6.49
+                                             A1 1 0 0023 5H5.21l-.94-2H1z"/>
+                                </svg>
+                                Быстрый заказ
+                            </button>
+                        </div>
+
+                        <!-- Социальные сети -->
+                        <nav class="lr8-socials"
+                             aria-label="Поделиться в социальных сетях">
+                            <a class="lr8-socials__link lr8-socials__link--vk"
+                               href="#" aria-label="ВКонтакте"
+                               rel="noopener noreferrer" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24" width="15" height="15"
+                                     aria-hidden="true" focusable="false">
+                                    <path d="M19.59 5.41C19.21 5 18.63 5 17.46 5H6.54
+                                             C5.37 5 4.79 5 4.41 5.41 4 5.83 4 6.46 4 7.7
+                                             v8.6c0 1.24 0 1.87.41 2.29.42.41 1 .41 2.13.41
+                                             h10.92c1.13 0 1.71 0 2.13-.41.41-.42.41-1.05.41-2.29
+                                             V7.7c0-1.24 0-1.87-.41-2.29zm-2.13 9.87h-1.22
+                                             c-.46 0-.6-.37-1.43-1.23-.71-.72-1.02-.82-1.2-.82
+                                             -.24 0-.31.07-.31.41v1.12c0 .29-.09.46-1.02.46
+                                             -1.51 0-3.18-.93-4.36-2.64C6.5 10.3 6 8.68 6 8.35
+                                             c0-.18.07-.35.41-.35h1.22c.31 0 .42.14.54.49
+                                             .59 1.74 1.59 3.27 2 3.27.15 0 .22-.07.22-.46
+                                             v-1.8c-.05-.8-.46-.87-.46-1.16 0-.14.12-.28.3-.28
+                                             h1.92c.27 0 .36.14.36.46v2.43c0 .27.12.36.19.36
+                                             .15 0 .28-.09.57-.39 0 0 .82-.96 1.46-2.07
+                                             .08-.15.25-.35.57-.35h1.22c.36 0 .44.19.36.46
+                                             -.15.69-1.57 2.69-1.57 2.69-.13.21-.17.31 0 .54
+                                             .12.17.54.54.82.87.51.56.9 1.03.99 1.36
+                                             .1.34-.09.51-.43.51z"/>
+                                </svg>
+                            </a>
+                            <a class="lr8-socials__link lr8-socials__link--fb"
+                               href="#" aria-label="Facebook"
+                               rel="noopener noreferrer" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24" width="15" height="15"
+                                     aria-hidden="true" focusable="false">
+                                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                                </svg>
+                            </a>
+                            <a class="lr8-socials__link lr8-socials__link--gp"
+                               href="#" aria-label="Google+"
+                               rel="noopener noreferrer" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24" width="15" height="15"
+                                     aria-hidden="true" focusable="false">
+                                    <path d="M23 11h-2V9h-2v2h-2v2h2v2h2v-2h2zM8 11v2.4
+                                             h3.97c-.16 1.03-1.2 3.02-3.97 3.02
+                                             -2.39 0-4.34-1.98-4.34-4.42S5.61 7.58 8 7.58
+                                             c1.36 0 2.27.58 2.79 1.08l1.9-1.83
+                                             C11.47 5.69 9.89 5 8 5 4.13 5 1 8.13 1 12
+                                             s3.13 7 7 7c4.04 0 6.72-2.84 6.72-6.84
+                                             0-.46-.05-.81-.11-1.16H8z"/>
+                                </svg>
+                            </a>
+                        </nav>
+
+                        <!-- Производитель -->
+                        <dl class="lr8-manufacturer">
+                            <dt class="lr8-manufacturer__label">Производитель:</dt>
+                            <dd>
+                                <a class="lr8-manufacturer__link"
+                                   href="#"
+                                   itemprop="brand"
+                                   itemscope
+                                   itemtype="https://schema.org/Brand">
+                                    <span itemprop="name">Ecco</span>
+                                </a>
+                            </dd>
+                        </dl>
+
+                    </section>
+                </div><!-- /lr8-product__body -->
+            </article><!-- /lr8-product -->
+
+        </div><!-- /lr8-section-inner -->
+    </section><!-- /section 05 -->
+
+
+    <!-- ===================== ПОДВАЛ ===================== -->
+    <div class="group-info" role="contentinfo">
+        Выполнил: Печко Алексей Александрович (ПЗТ-43) ·
+        ЛР7 + ЛР8 · @media Адаптивная вёрстка + Интернет-магазин · 2026
+    </div>
+
+
+    <!-- =====================================================================
+         МОДАЛЬНОЕ ОКНО — «Заказ обратного звонка»
+         Размещается в конце body, z-index: 1000, скрыто по умолчанию.
+         Открывается через JS при нажатии #lr8-open-btn.
+    ===================================================================== -->
+    <div class="lr8-overlay lr8-overlay--hidden"
+         id="lr8-overlay"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="lr8-modal-title"
+         aria-describedby="lr8-modal-desc">
+
+        <article class="lr8-modal">
+
+            <!-- Шапка -->
+            <header class="lr8-modal__header">
+                <h2 class="lr8-modal__title" id="lr8-modal-title">
+                    Заказ обратного звонка
+                </h2>
+                <button class="lr8-modal__close"
+                        id="lr8-close-x"
+                        type="button"
+                        aria-label="Закрыть окно">&#10005;</button>
+            </header>
+
+            <!-- Тело -->
+            <div class="lr8-modal__body">
+
+                <!--
+                    novalidate — ручная валидация через JS.
+                    autocomplete="off" — не предлагать браузерное заполнение.
+                -->
+                <form class="lr8-form"
+                      id="lr8-form"
+                      novalidate
+                      autocomplete="off"
+                      aria-label="Форма заказа обратного звонка">
+
+                    <!-- Левая колонка: Имя, Телефон, Email -->
+                    <div class="lr8-form__left">
+
+                        <!-- Поле: Имя -->
+                        <div class="lr8-field" id="lr8-group-name">
+                            <label class="lr8-field__label" for="lr8-name">
+                                Имя:
+                                <span class="lr8-field__req" aria-hidden="true">*</span>
+                            </label>
+                            <input class="lr8-field__input"
+                                   type="text"
+                                   id="lr8-name"
+                                   name="name"
+                                   required
+                                   aria-required="true"
+                                   aria-describedby="lr8-err-name"
+                                   maxlength="100" />
+                            <span class="lr8-field__error"
+                                  id="lr8-err-name"
+                                  role="alert"
+                                  aria-live="polite">Введите имя</span>
+                        </div>
+
+                        <!-- Поле: Телефон -->
+                        <div class="lr8-field" id="lr8-group-phone">
+                            <label class="lr8-field__label" for="lr8-phone">
+                                Телефон:
+                                <span class="lr8-field__req" aria-hidden="true">*</span>
+                            </label>
+                            <input class="lr8-field__input"
+                                   type="tel"
+                                   id="lr8-phone"
+                                   name="phone"
+                                   required
+                                   aria-required="true"
+                                   aria-describedby="lr8-err-phone"
+                                   maxlength="20" />
+                            <span class="lr8-field__error"
+                                  id="lr8-err-phone"
+                                  role="alert"
+                                  aria-live="polite">Введите телефон</span>
+                        </div>
+
+                        <!-- Поле: Email (необязательное) -->
+                        <div class="lr8-field" id="lr8-group-email">
+                            <label class="lr8-field__label" for="lr8-email">
+                                Email:
+                            </label>
+                            <input class="lr8-field__input"
+                                   type="email"
+                                   id="lr8-email"
+                                   name="email"
+                                   aria-describedby="lr8-err-email"
+                                   maxlength="150" />
+                            <span class="lr8-field__error"
+                                  id="lr8-err-email"
+                                  role="alert"
+                                  aria-live="polite">Введите корректный Email</span>
+                        </div>
+
+                    </div><!-- /lr8-form__left -->
+
+                    <!-- Правая колонка: Примечание -->
+                    <div class="lr8-form__right">
+                        <div class="lr8-field lr8-field--tall">
+                            <label class="lr8-field__label" for="lr8-note">
+                                Примечание
+                            </label>
+                            <textarea class="lr8-field__input lr8-field__textarea"
+                                      id="lr8-note"
+                                      name="note"
+                                      maxlength="500"
+                                      aria-label="Примечание к заказу"></textarea>
+                        </div>
+                    </div><!-- /lr8-form__right -->
+
+                    <!-- Примечание (обязательные поля) -->
+                    <p class="lr8-form__hint" id="lr8-modal-desc">
+                        Поля обозначенные символом
+                        <abbr title="обязательное поле">*</abbr>
+                        &mdash; обязательны для заполнения
+                    </p>
+
+                    <!-- Кнопки -->
+                    <div class="lr8-form__actions">
+                        <button class="lr8-btn lr8-btn--primary" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 24 24" width="15" height="15"
+                                 aria-hidden="true" focusable="false"
+                                 class="lr8-btn__icon">
+                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16
+                                         c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6
+                                         l8 5 8-5v2z"/>
+                            </svg>
+                            Отправить заявку
+                        </button>
+                        <button class="lr8-btn lr8-btn--secondary"
+                                type="button"
+                                id="lr8-close-btn">Закрыть</button>
+                    </div>
+
+                </form>
+            </div><!-- /lr8-modal__body -->
+        </article>
+    </div><!-- /lr8-overlay -->
+
+
+    <!-- =====================================================================
+         JAVASCRIPT
+         Функциональность:
+           1. Открытие / закрытие модального окна (кнопка, оверлей, Escape)
+           2. Валидация формы (required, tel ≥7 цифр, email regex)
+           3. Валидация в реальном времени (blur + input)
+           4. Счётчик количества товара (−/+, защита от некорректного ввода)
+         Никаких внешних зависимостей — чистый vanilla JS.
+    ===================================================================== -->
+    <script>
+    'use strict';
+
+    /* ──────────────────────────────────────────────────────────
+       1. МОДАЛЬНОЕ ОКНО
+    ────────────────────────────────────────────────────────── */
+
+    var overlay   = document.getElementById('lr8-overlay');
+    var openBtn   = document.getElementById('lr8-open-btn');
+    var closeBtn  = document.getElementById('lr8-close-btn');
+    var closeX    = document.getElementById('lr8-close-x');
+
+    /**
+     * Открывает модальное окно и переносит фокус внутрь.
+     */
+    function openModal() {
+        if (!overlay) return;
+        overlay.classList.remove('lr8-overlay--hidden');
+        // Переносим фокус на первое поле для доступности
+        var firstInput = overlay.querySelector('input, textarea, button');
+        if (firstInput) firstInput.focus();
+    }
+
+    /**
+     * Закрывает модальное окно, возвращает фокус на кнопку открытия.
+     */
+    function closeModal() {
+        if (!overlay) return;
+        overlay.classList.add('lr8-overlay--hidden');
+        if (openBtn) openBtn.focus();
+    }
+
+    if (openBtn)  openBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (closeX)   closeX.addEventListener('click',  closeModal);
+
+    // Закрытие по клику на фон оверлея
+    if (overlay) {
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) closeModal();
+        });
+    }
+
+    // Закрытие по Escape
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay &&
+            !overlay.classList.contains('lr8-overlay--hidden')) {
+            closeModal();
+        }
+    });
+
+    /* ──────────────────────────────────────────────────────────
+       2. ВАЛИДАЦИЯ ФОРМЫ
+    ────────────────────────────────────────────────────────── */
+
+    /**
+     * Маркирует группу поля как ошибочную.
+     * @param {HTMLElement} group — контейнер .lr8-field
+     */
+    function showError(group) {
+        group.classList.add('lr8-field--error');
+        group.classList.remove('lr8-field--ok');
+    }
+
+    /**
+     * Маркирует группу поля как успешную.
+     * @param {HTMLElement} group — контейнер .lr8-field
+     */
+    function clearError(group) {
+        group.classList.remove('lr8-field--error');
+        group.classList.add('lr8-field--ok');
+    }
+
+    /**
+     * Валидирует одно поле по его типу и атрибутам.
+     * @param {HTMLInputElement} field
+     * @returns {boolean} — true, если поле прошло валидацию
+     */
+    function validateField(field) {
+        var group = field.closest('.lr8-field');
+        if (!group) return true;
+
+        var value = field.value.trim();
+
+        // Обязательное поле — не может быть пустым
+        if (field.required && value === '') {
+            showError(group);
+            return false;
+        }
+
+        // Email: проверяем формат, только если что-то введено
+        if (field.type === 'email' && value !== '') {
+            var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRe.test(value)) {
+                showError(group);
+                return false;
+            }
+        }
+
+        // Телефон: минимум 7 цифровых символов
+        if (field.type === 'tel' && field.required && value !== '') {
+            var digits = value.replace(/\D/g, '');
+            if (digits.length < 7) {
+                showError(group);
+                return false;
+            }
+        }
+
+        clearError(group);
+        return true;
+    }
+
+    var form = document.getElementById('lr8-form');
+
+    if (form) {
+        // Отправка формы — валидируем все поля
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var fields = form.querySelectorAll('input');
+            var valid  = true;
+
+            fields.forEach(function (field) {
+                if (!validateField(field)) valid = false;
+            });
+
+            if (valid) {
+                alert('Заявка успешно отправлена!\nМы перезвоним вам в ближайшее время.');
+                form.reset();
+                // Убираем классы состояния после сброса
+                form.querySelectorAll('.lr8-field').forEach(function (g) {
+                    g.classList.remove('lr8-field--error', 'lr8-field--ok');
+                });
+            }
+        });
+
+        // Валидация при потере фокуса (blur)
+        form.addEventListener('focusout', function (e) {
+            if (e.target.tagName === 'INPUT') validateField(e.target);
+        });
+
+        // Снимаем красный цвет при вводе (пока пользователь печатает)
+        form.addEventListener('input', function (e) {
+            var field = e.target;
+            if (field.tagName !== 'INPUT') return;
+            var group = field.closest('.lr8-field');
+            if (group) group.classList.remove('lr8-field--error');
+        });
+    }
+
+    /* ──────────────────────────────────────────────────────────
+       3. СЧЁТЧИК КОЛИЧЕСТВА ТОВАРА
+    ────────────────────────────────────────────────────────── */
+
+    var qtyInput = document.getElementById('lr8-qty-input');
+    var qtyMinus = document.getElementById('lr8-qty-minus');
+    var qtyPlus  = document.getElementById('lr8-qty-plus');
+
+    if (qtyInput && qtyMinus && qtyPlus) {
+        qtyMinus.addEventListener('click', function () {
+            var cur = parseInt(qtyInput.value, 10) || 1;
+            var min = parseInt(qtyInput.min,   10) || 1;
+            if (cur > min) qtyInput.value = cur - 1;
+        });
+
+        qtyPlus.addEventListener('click', function () {
+            var cur = parseInt(qtyInput.value, 10) || 1;
+            var max = parseInt(qtyInput.max,   10) || 999;
+            if (cur < max) qtyInput.value = cur + 1;
+        });
+
+        // Защита от некорректного ручного ввода
+        qtyInput.addEventListener('change', function () {
+            var val = parseInt(qtyInput.value, 10);
+            var min = parseInt(qtyInput.min,   10) || 1;
+            var max = parseInt(qtyInput.max,   10) || 999;
+            if (isNaN(val) || val < min) val = min;
+            if (val > max)               val = max;
+            qtyInput.value = val;
+        });
+    }
+    </script>
+
+</body>
+</html>
